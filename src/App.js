@@ -10,10 +10,18 @@ import Filter from "./components/Filter";
 export default function App() {
   return (
     <div>
-      <Input />
-      <Sort />
-      <Filter />
-      <GIFScreen />
+        <div id="parameter-field">
+            <Input />
+            <Sort id="sort-field" />
+            <Filter id="filter-field" />
+        </div>
+        <div id="image-container">
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+        </div>
     </div>
   )
 }
