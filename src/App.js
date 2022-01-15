@@ -1,9 +1,9 @@
 import React from 'react'
 /*=== Imports ===*/
 import Input from "./components/Input";
-import Sort from "./components/Sort";
+import RandomFilter from "./components/RandomFilter";
 import GIFScreen from "./components/GIFScreen";
-import Filter from "./components/Filter";
+import TrendFilter from "./components/TrendFilter";
 
 
 
@@ -12,10 +12,33 @@ export default function App() {
     <div>
         <div id="parameter-field">
             <Input />
-            <Sort id="sort-field" />
-            <Filter id="filter-field" />
+            <RandomFilter id="sort-field" />
+            <TrendFilter id="filter-field" />
         </div>
         <div id="image-container">
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
+            <GIFScreen />
             <GIFScreen />
             <GIFScreen />
             <GIFScreen />
