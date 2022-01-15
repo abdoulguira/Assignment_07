@@ -5,53 +5,6 @@ body { margin: 0 }
 
 /* === FILTERS AND SORT === */
 
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-.dropbtn {
-    font-weight: bold;
-    font-size: 18px;
-    margin: 15px;
-    width: 100px;
-    height: 40px;
-    border-radius: 2px;
-    border: black 2px solid;
-    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-    animation: move 35s linear infinite;
-    padding: 2px;
-}
-
-.inside-menu {
-    height: 40px;
-    width: 200px;
-    border: black 2px solid;
-    border-radius: 5px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    margin: -10px 2px 12px 2px;
-    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-    animation: move 35s linear infinite;
-    padding: 2px;
-}
-
-.inside-menu {
-    top: 2px;
-    left: 1px;
-    box-shadow: none;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    padding: 3px;
-    margin: 0 15px 15px 15px;
-}
-
 #parameter-field {
     display: flex;
     height: 200px;
@@ -79,9 +32,12 @@ body {
 }
 
 .gifs {
-    max-height: 100%;
-    max-width: 100%;
-    margin: 0;
+
+    flex-wrap: wrap;
+    max-height: 350px;
+    max-width: 350px;
+    margin: 15px;
+
 }
 
 .key-word {
@@ -105,7 +61,31 @@ body {
 
 .submit-button {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
+    margin: 15px;
+    width: 100px;
+    height: 40px;
+    border-radius: 2px;
+    border: black 2px solid;
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    animation: move 35s linear infinite;
+}
+
+.trend-button {
+    font-weight: bold;
+    font-size: 15px;
+    margin: 15px;
+    width: 100px;
+    height: 40px;
+    border-radius: 2px;
+    border: black 2px solid;
+    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    animation: move 35s linear infinite;
+}
+
+.random-button {
+    font-weight: bold;
+    font-size: 15px;
     margin: 15px;
     width: 100px;
     height: 40px;
