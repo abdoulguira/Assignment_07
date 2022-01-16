@@ -5,9 +5,12 @@ import RandomFilter from "./components/RandomFilter";
 import GIFScreen from "./components/GIFScreen";
 import TrendFilter from "./components/TrendFilter";
 
-
+const {REACT_APP_API_KEY} = process.env;
+console.log(`${REACT_APP_API_KEY}`)
+console.log("hello")
 
 export default function App() {
+
   return (
     <div>
         <div id="parameter-field">
