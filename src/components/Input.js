@@ -13,5 +13,6 @@ export default function Input() {
             <input value={term} className="text-box" type="text" placeholder="Enter Your Giphy Term!" onChange={event => setTerm(event.target.value)} />
             <input className="submit-button" type={"submit"} value={"Submit"} />
         </form>
+        
     )
 }
