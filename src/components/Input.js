@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
 import GIFScreen from "./GIFScreen";
 
-export default function Input() {
+export default function Input(props) {
 
     const [term, setTerm] = useState("")
     const handleSubmit = (event) => {
       event.preventDefault();
+      props.parentCallback(term);
     }
 
     return (
@@ -13,6 +14,6 @@ export default function Input() {
             <input value={term} className="text-box" type="text" placeholder="Enter Your Giphy Term!" onChange={event => setTerm(event.target.value)} />
             <input className="submit-button" type={"submit"} value={"Submit"} />
         </form>
-        
+
     )
 }

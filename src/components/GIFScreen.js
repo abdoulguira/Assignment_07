@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
+import Gifs from "./Gifs";
 
-export default function GIFScreen() {
-    //const [gifs , setGifs] = useState(placeholderValForInitialGifs)
+export default function GIFScreen(props) {
+
     return (
         <div>
-            <img className={"gifs"} src={require("./images/placeholder.jpg")} alt={"this is some random info"}/>
+            <Gifs className="gifs" />
         </div>
     )
 }
