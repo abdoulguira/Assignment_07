@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import GIFScreen from "./GIFScreen";
 
 export default function Input(props) {
 

@@ -5,8 +5,6 @@ import RandomFilter from "./components/RandomFilter";
 import GIFScreen from "./components/GIFScreen";
 import TrendFilter from "./components/TrendFilter";
 
-const {REACT_APP_API_KEY} = process.env;
-
 export default function App() {
 
     const [term, setTerm] = useState("")
@@ -25,8 +23,9 @@ export default function App() {
     }
     const trendCallback = () => {
         setTerm("")
-        setRandomOption(true)
-        setTrendOption(false)
+        setRandomOption(false)
+        setTrendOption(true)
+        console.log("trend")
     }
     return (
     <div>
@@ -36,7 +35,7 @@ export default function App() {
             <TrendFilter parentCallback = {trendCallback}/>
         </div>
         <div id="image-container">
-            <GIFScreen trendOption={trendOption} term={term} randOption={randOption} apiKey={REACT_APP_API_KEY}/>
+            <GIFScreen trendOption={trendOption} term={term} randOption={randOption} />
         </div>
     </div>
   )

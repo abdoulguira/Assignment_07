@@ -1,11 +1,67 @@
-import React, {useState} from 'react'
-import Gifs from "./Gifs";
+import React, {useEffect, useState} from 'react'
+
+const {REACT_APP_API_KEY} = process.env;
 
 export default function GIFScreen(props) {
 
+    const [gifs, setGifs] = useState([])
+
+    useEffect(() => {
+            if (props.randOption) {
+                const trendUrl = `http://api.giphy.com/v1/gifs/trending?api_key=${REACT_APP_API_KEY}&limit=20`
+                fetch(trendUrl).then(r => {
+                    if (r.ok) {
+                        return r.json()
+                    } else {
+                        alert("ERROR FETCHING")
+                    }
+                }).then((data) => {
+                    setGifs(data.data)
+                })
+            } else if (props.trendOption) {
+                const trendUrl = `http://api.giphy.com/v1/gifs/trending?api_key=${REACT_APP_API_KEY}&limit=20`
+                fetch(trendUrl).then(r => {
+                    if (r.ok) {
+                        return r.json()
+                    } else {
+                        alert("ERROR FETCHING")
+                    }
+                }).then((data) => {
+                    setGifs(data.data)
+                })
+            } else if (props.term != "") {
+                const trendUrl = `http://api.giphy.com/v1/gifs/trending?api_key=${REACT_APP_API_KEY}&limit=20`
+                fetch(trendUrl).then(r => {
+                    if (r.ok) {
+                        return r.json()
+                    } else {
+                        alert("ERROR FETCHING")
+                    }
+                }).then((data) => {
+                    setGifs(data.data)
+                })
+            } else {
+                const trendUrl = `http://api.giphy.com/v1/gifs/trending?api_key=${REACT_APP_API_KEY}&limit=20`
+                fetch(trendUrl).then(r => {
+                    if (r.ok) {
+                        return r.json()
+                    } else {
+                        alert("ERROR FETCHING")
+                    }
+                }).then((data) => {
+                    setGifs(data.data)
+                })
+            }
+        }, []
+    )
     return (
-        <div>
-            <Gifs className="gifs" />
+        <div id="image-container">
+            {gifs.map(gif => (<img
+                    className="gifs"
+                    src={gif.images.fixed_width.url}
+                    alt="test"
+                />)
+            )}
         </div>
     )
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import GIFScreen from "./GIFScreen";
 
 export default function TrendFilter(props) {
     const trend = () => {
