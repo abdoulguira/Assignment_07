@@ -7,7 +7,7 @@ export default function GIFScreen(props) {
     const [gifs, setGifs] = useState([])
 
     useEffect(() => {
-            if (props.randOption) {
+            if (props.showGifs) {
                 const trendUrl = `http://api.giphy.com/v1/gifs/trending?api_key=${REACT_APP_API_KEY}&limit=20`
                 fetch(trendUrl).then(r => {
                     if (r.ok) {
@@ -38,6 +38,7 @@ export default function GIFScreen(props) {
                         alert("ERROR FETCHING")
                     }
                 }).then((data) => {
+                    console.log(data.data)
                     setGifs(data.data)
                 })
             } else {
@@ -58,7 +59,7 @@ export default function GIFScreen(props) {
         <div id="image-container">
             {gifs.map(gif => (<img
                     className="gifs"
-                    src={gif.images.fixed_width.url}
+                    src={gif.images.original.url}
                     alt="test"
                 />)
             )}
