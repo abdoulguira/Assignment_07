@@ -24,7 +24,7 @@ body { margin: 0 }
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap
+    flex-wrap: wrap;
 }
 
 body {
@@ -39,6 +39,12 @@ body {
     margin: 5px;
 
 }
+
+.gif {
+
+    margin: 20px;
+}
+
 
 .key-word {
     margin: 10px;

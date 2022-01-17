@@ -11,6 +11,8 @@ export default function App() {
 
     const[request, setRequest] = React.useState("")
 
+    const[renderCount, setRenderCount] = React.useState(0)
+
 
     const handleChange = (event) => {
         setSearchTerm(event.target.value)
@@ -19,11 +21,17 @@ export default function App() {
     const handleRequests = (requestType) => {
         setRequest(requestType)
     }
+
+    const reRender = () => {
+        setRenderCount((prevRender) => prevRender+1)
+        console.log(renderCount)
+    }
+
     return (
         <div>
             <div id="parameter-field">
                 <Input term = {searchTerm} setSearchTerm = {handleChange} setSearch = {handleRequests} />
-                <RandomFilter setShowRandom = {handleRequests}/>
+                <RandomFilter setShowRandom = {handleRequests} setRerender = {reRender}/>
                 <TrendFilter setShowTrending = {handleRequests} />
             </div>
             <div id="image-container">
@@ -31,6 +39,7 @@ export default function App() {
                     <GIFScreen
                         showGifs={request}
                         term={searchTerm}
+                        count={renderCount}
                     />}
 
             </div>
