@@ -9,36 +9,39 @@ const {REACT_APP_API_KEY} = process.env;
 
 export default function App() {
 
-    const [term, setTerm] = useState("")
-    const [trendOption, setTrendOption] = useState(false)
-    const [randOption, setRandomOption] = useState(false)
+    const[searchTerm, setSearchTerm] = React.useState("")
 
-    const termCallBack = (term) => {
-        setTerm(term)
-        setRandomOption(false)
-        setTrendOption(false)
+    const[request, setRequest] = React.useState("")
+
+
+    const handleChange = (event) => {
+        setSearchTerm(event.target.value)
     }
-    const randomCallBack = () => {
-        setTerm("")
-        setRandomOption(true)
-        setTrendOption(false)
+
+    const handleRequests = (requestType) => {
+        setRequest(requestType)
     }
-    const trendCallback = () => {
-        setTerm("")
-        setRandomOption(true)
-        setTrendOption(false)
-    }
+
+    // console.log("render")
+    // console.log(searchTerm)
+    // console.log(request)
+
     return (
-    <div>
-        <div id="parameter-field">
-            <Input parentCallback = {termCallBack}/>
-            <RandomFilter parentCallback = {randomCallBack}/>
-            <TrendFilter parentCallback = {trendCallback}/>
+        <div>
+            <div id="parameter-field">
+                <Input term = {searchTerm} setSearchTerm = {handleChange} setSearch = {handleRequests} />
+                <RandomFilter setShowRandom = {handleRequests}/>
+                <TrendFilter setShowTrending = {handleRequests} />
+            </div>
+            <div id="image-container">
+                {request &&
+                    <GIFScreen
+                    showGifs={request}
+                    apiKey={REACT_APP_API_KEY}
+                />}
+
+            </div>
         </div>
-        <div id="image-container">
-            <GIFScreen trendOption={trendOption} term={term} randOption={randOption} apiKey={REACT_APP_API_KEY}/>
-        </div>
-    </div>
   )
 }
 
