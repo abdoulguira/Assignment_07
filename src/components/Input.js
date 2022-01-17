@@ -9,7 +9,7 @@ export default function Input(props) {
 
 
     return (
-        <form className="key-word" type="form" onSubmit={handleSubmit}>
+        <form className="key-word" type="form" onChange={handleSubmit}>
             <input
                 value={props.term}
                 className="text-box"
@@ -17,7 +17,6 @@ export default function Input(props) {
                 placeholder="Enter Your Giphy Term!"
                 onChange={props.setSearchTerm}
             />
-            <input className="submit-button" type="submit" value="Submit"/>
         </form>
 
     )

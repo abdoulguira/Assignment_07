@@ -30,6 +30,7 @@ export default function App() {
                 {request &&
                     <GIFScreen
                         showGifs={request}
+                        term={searchTerm}
                     />}
 
             </div>

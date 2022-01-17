@@ -60,18 +60,6 @@ body {
     }
 }
 
-.submit-button {
-    font-weight: bold;
-    font-size: 15px;
-    margin: 15px;
-    width: 100px;
-    height: 40px;
-    border-radius: 2px;
-    border: black 2px solid;
-    background-image: repeating-linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-    animation: move 35s linear infinite;
-}
-
 .trend-button {
     font-weight: bold;
     font-size: 15px;
