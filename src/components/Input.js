@@ -1,18 +1,23 @@
 import React, {useState} from 'react'
-import GIFScreen from "./GIFScreen";
 
 export default function Input(props) {
 
-    const [term, setTerm] = useState("")
     const handleSubmit = (event) => {
-      event.preventDefault();
-      props.parentCallback(term);
+        event.preventDefault();
+        props.setSearch("search")
     }
 
+
     return (
-        <form className="key-word" onSubmit={handleSubmit}>
-            <input value={term} className="text-box" type="text" placeholder="Enter Your Giphy Term!" onChange={event => setTerm(event.target.value)} />
-            <input className="submit-button" type={"submit"} value={"Submit"} />
+        <form className="key-word" type="form" onSubmit={handleSubmit}>
+            <input
+                value={props.term}
+                className="text-box"
+                type="text"
+                placeholder="Enter Your Giphy Term!"
+                onChange={props.setSearchTerm}
+            />
+            <input className="submit-button" type="submit" value="Submit"/>
         </form>
 
     )
